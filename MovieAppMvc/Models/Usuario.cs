@@ -11,8 +11,8 @@ namespace MovieAppMvc.Models
         public DateTime FechaNacimiento { get; set; }
         public string ImagenPerfilUrl { get; set; }
 
-        public List<Favorito> ListaPeliculasFavoritas { get; set; }
-        public List<Review> Reviews { get; set; }
+        public List<Favorito>? ListaPeliculasFavoritas { get; set; }
+        public List<Review>? Reviews { get; set; }
         public List<Favorito>? PeliculasFavoritas { get; set; }
 
 
