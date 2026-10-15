@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace MovieAppMvc.Models
 {
@@ -10,10 +11,16 @@ namespace MovieAppMvc.Models
 
         public string UsuarioId { get; set; }
         public Usuario? Usuario { get; set; }
-
-        public string Comentario { get; set; }
+        [Range(1, 5)]
         public int Rating { get; set; }
+        [Required]
+        [StringLength(500)]
+        public string Comentario { get; set; }
+        [DataType(DataType.Date)]
         public DateTime FechaReview { get; set; }
+        //manejo de concurrencia
+        [Timestamp]
+        public byte[] RowVersion { get; set; }
 
     }
 }
